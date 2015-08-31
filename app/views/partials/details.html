@@ -1,1 +1,11 @@
 <h3>details</h3>
+
+<div ng-controller="DetailsController">
+	<div ng-model="items">
+		<h1>{{ items[whichItem].item_name }}</h1>
+		<div class="info">
+			<h3>{{ items[whichItem].item_cost }}</h3>
+			<h3>{{ items[whichItem].item_description }}</h3>
+		</div>
+	</div>
+</div>

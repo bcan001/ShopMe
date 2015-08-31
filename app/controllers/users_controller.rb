@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			flash[:notice] = "User Successfully created"
-			redirect_to items_path
+			redirect_to shop_home_path
 		else
       flash[:notice] = "Please fill in the fields correctly to create a user"
 			render 'new'

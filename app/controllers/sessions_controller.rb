@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
 			flash[:notice] = 'You\'ve logged in!'
-			redirect_to items_path
+			redirect_to shop_home_path
 		else
 			flash[:error] = 'There\'s something wrong with your username or password'
 			redirect_to login_path

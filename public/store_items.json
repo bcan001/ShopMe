@@ -1,0 +1,36 @@
+[
+	{
+		"item_name" : "couch",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+	},
+	{
+		"item_name" : "chair",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+	
+	},
+	{
+		"item_name" : "sofa",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+	
+	},
+	{
+		"item_name" : "lamp",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+	
+	},
+	{
+		"item_name" : "mattress",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+
+	},
+	{
+		"item_name" : "table",
+		"item_description" : "this is a nice item",
+		"item_cost" : 12
+	}
+]

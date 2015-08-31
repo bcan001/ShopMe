@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
 
-  root "users#new"
+  root "partials#items"
 
   resources :users
   resources :items
 
+  # get '/homepage', to: 'partials#homepage', as: 'shop_home'
+  get '/shop', to: 'partials#items', as: 'shop_home'
+  get '/about', to: 'partials#about', as: 'about_home'
+  get '/cart', to: 'partials#cart', as: 'cart_home'
+  get '/checkout', to: 'partials#checkout', as: 'checkout_home'
+
+  # get '/#/details/:id', to: 'partials#details'
+
+
+
+  get '/cart_endpoint', to: 'items#cart'
+  get '/checkout_endpoint', to: 'items#checkout'
 
   # get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
@@ -12,7 +24,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

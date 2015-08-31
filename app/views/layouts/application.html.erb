@@ -21,15 +21,15 @@
 	    </div>
 	    <div id="navbarCollapse" class="collapse navbar-collapse">
 	      <ul class="nav navbar-nav pull-right" style="padding-top: 13px;">
-	      	<li><%= link_to 'Home', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
-	      	<li><%= link_to 'About', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'Home', shop_home_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'About', about_home_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
         <% if current_user %>
-	      	<li><%= link_to 'My Cart', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'My Cart', cart_home_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
 	      <% else %>
 	      	<li><%= link_to 'My Cart', login_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
 	      <% end %>
         <% if current_user %>
-	      	<li><%= link_to 'Checkout', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'Checkout', checkout_home_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
 	      <% else %>
 	      	<li><%= link_to 'Checkout', login_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
 	      <% end %>
@@ -44,9 +44,11 @@
 	  </div>
 	</nav>
 
+
 <%= flash[:notice] %>
 
 <%= yield %>
+
 
 </body>
 </html>
