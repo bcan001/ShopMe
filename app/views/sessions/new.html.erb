@@ -1,0 +1,15 @@
+<h1>login</h1>
+
+<%= form_tag '/login' do %>
+	<div class='control-group'>
+		<p>Username</p>
+		<p><%= text_field_tag :username, params[:username] || '', placeholder: 'Username'%></p>
+	</div>
+	<div class='control-group'>
+		<p>Password</p>
+		<p><%= password_field_tag :password, params[:password] || '', placeholder: 'Password'%></p>
+	</div>
+	<%= submit_tag 'login', class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to "register", new_user_path %>

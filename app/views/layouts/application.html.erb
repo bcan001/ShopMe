@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="shopApp">
 <head>
   <title>Shopme</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,6 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+		<nav class="navbar navbar-default" style="height: 80px; background-color: white; color: black;">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" style="color:black;">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <h3>ShopMe</h3>
+	    </div>
+	    <div id="navbarCollapse" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav pull-right" style="padding-top: 13px;">
+	      	<li><%= link_to 'Home', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'About', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+        <% if current_user %>
+	      	<li><%= link_to 'My Cart', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% else %>
+	      	<li><%= link_to 'My Cart', login_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% end %>
+        <% if current_user %>
+	      	<li><%= link_to 'Checkout', items_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% else %>
+	      	<li><%= link_to 'Checkout', login_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% end %>
+        <% if current_user %>
+	      	<li><%= link_to 'Logout', logout_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% else %>
+	      	<li><%= link_to 'Register', new_user_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      	<li><%= link_to 'Login', login_path, style: "font-size: 18px; color: #3C3F47; color:black;" %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+<%= flash[:notice] %>
 
 <%= yield %>
 
